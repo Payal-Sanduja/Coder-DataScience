@@ -47,7 +47,18 @@ if(A>0):
   if(B>=0):
         print("number is Positive")
   else:
+      print("number is Negative")  
+  #use of if elif and else
+  C=int(input("enter number"))
+  if(C>0):
+        print("number is Positive")
+  elif(C==0):
+        print("number is equal to zero")      
+  else:
       print("number is Negative")
+
+
+      
 
 
 
