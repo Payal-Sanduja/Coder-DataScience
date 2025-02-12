@@ -36,6 +36,19 @@ print(type(i))
 j=("payal","ekta","neha","pooja",1,2,3,4,5)
 print(j)
 print(type(j))
+#use of if statement
+A=int(input("enter number"))
+print(A)
+if(A>0):
+  print("number is positive")
+  
+#Use of if else Statement
+  B=int(input("enter number"))
+  if(B>=0):
+        print("number is Positive")
+  else:
+      print("number is Negative")
+
 
 
 
