@@ -1,4 +1,7 @@
 print("hello ,This is my first program")
+a=20
+b=3
+d=49.5
 print(d)
 print(type(d))
 
