@@ -10,3 +10,13 @@ n4=int(input("Enter the Second Number "))
 n5=int(input("Enter the first number "))
 Avg=(n3+n4+n5)/3
 print("The average of the Three Numbers is== ",Avg)
+
+#Program to calculate the average function in a list
+list=[10,20,30,40]
+Sum=sum(list)
+length=len(list)
+Average=Sum/length
+print( "The Average of the Given List is as :",Average)
+
+
+
