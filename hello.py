@@ -65,6 +65,10 @@ for i in range(1,11):
 D=int(input("enter number"))
 for i in range(1,11):
   print(D*i)
+
+#use of for loop for printing welcome 10 times
+for i in range(1,10):
+  print("welcome")
   
   
 
