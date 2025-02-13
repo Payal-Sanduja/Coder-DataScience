@@ -11,4 +11,14 @@ sum(10,20)
 def subtract(c,d):
     print(c-d)
 subtract(10,5)
+
+def multiply(c,d):
+    print(c*d)
+multiply(10,5)
+def divide(c,d):
+    print(c/d)
+divide(10,5)
+def modulus(c,d):
+    print(c%d)
+modulus(10,5)
           
