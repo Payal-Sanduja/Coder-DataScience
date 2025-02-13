@@ -28,7 +28,7 @@ def d(a,b=5):
     
 d(20)
 #Function using return statement
-function area(l,b):
+def area(l,b):
    return l*b
 s=area(5,4)
 print s
