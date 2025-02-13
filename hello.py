@@ -57,7 +57,7 @@ if(A>0):
   else:
       print("number is Negative")
 
-
+#use of for loop 
 for i in range(1,10):
   print(i)
 
