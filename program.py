@@ -19,4 +19,15 @@ Average=Sum/length
 print( "The Average of the Given List is as :",Average)
 
 
+# Program to calculate the Factorial of the Number
+n=int(input("Enter the Number: "))
+fact=1
+i=1
+while i<=n:
+    fact=fact*i
+    i=i+1
+print("The Factotal of the given number is:",fact)    
+
+
+
 
