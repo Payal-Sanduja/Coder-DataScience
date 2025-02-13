@@ -61,6 +61,13 @@ if(A>0):
 for i in range(1,10):
   print(i)
 
+#use of for loop for printing any table
+D=int(input("enter number"))
+for i in range(1,10):
+  print(D*i)
+  
+  
+
       
 
 
