@@ -76,6 +76,13 @@ i=1
 while(i<=10):
     print("hello users")
     i=i+1
+
+# use of while condition for printing the table of a number
+i=1
+n=int(input("Enter the Number"))
+while(i<=10):
+    print(n*i)
+    i=i+1
    
   
   
