@@ -26,5 +26,10 @@ modulus(10,5)
 def d(a,b=5):
     print(a+b)
     
-d(20)     
+d(20)
+#Function using return statement
+function area(l,b):
+   return l*b
+s=area(5,4)
+print s
           
