@@ -21,4 +21,10 @@ divide(10,5)
 def modulus(c,d):
     print(c%d)
 modulus(10,5)
+
+#function by using the default values
+def d(a,b=5):
+    print(a+b)
+    
+d(20)     
           
