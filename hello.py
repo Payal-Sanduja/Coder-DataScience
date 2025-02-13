@@ -58,6 +58,9 @@ if(A>0):
       print("number is Negative")
 
 
+for i in range(1,10):
+  print(i)
+
       
 
 
