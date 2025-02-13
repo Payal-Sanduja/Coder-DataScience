@@ -69,6 +69,14 @@ for i in range(1,11):
 #use of for loop for printing welcome 10 times
 for i in range(1,10):
   print("welcome")
+
+
+# Use of while statement
+i=1
+while(i<=10):
+    print("hello users")
+    i=i+1
+   
   
   
 
