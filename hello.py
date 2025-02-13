@@ -58,12 +58,12 @@ if(A>0):
       print("number is Negative")
 
 #use of for loop 
-for i in range(1,10):
+for i in range(1,11):
   print(i)
 
 #use of for loop for printing any table
 D=int(input("enter number"))
-for i in range(1,10):
+for i in range(1,11):
   print(D*i)
   
   
