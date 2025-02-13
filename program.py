@@ -46,6 +46,16 @@ elif(m>=70 and m<80):
     print("Grade is C")
 else:
     print("Grade is D")
+
+
+#program to check whether the number is even or odd
+number=int(input("Enter Number"))
+if(number%2==0):
+    print("Number is Even")
+
+else:
+    print("Number is odd")
+
     
 
 
