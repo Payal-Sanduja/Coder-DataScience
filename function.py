@@ -32,4 +32,9 @@ def area(l,b):
    return l*b
 s=area(5,4)
 print s
+
+# program of lambda Expression
+
+x=lambda a,b:a+b
+print(x(5,6))
           
