@@ -67,11 +67,8 @@ print(var5.describe())
 
 
 
-var1=var.to_csv("payal.csv")
-var2=pd.read_csv("payal.csv")
-print(var2.head(1))
-print(var2.tail(3))
-var4=var.to_json("payal1.json")
-var5=pd.read_json("payal1.json")
-print(var5.head(2))
+
+var5=var.to_json("payal1.json")
+var6=pd.read_json("payal1.json")
+print(var6.head(2))
 
