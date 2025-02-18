@@ -73,6 +73,28 @@ var8=pd.read_json("payal11.json")
 print(var8.head(2))
 
 
+# Use of dropna
+var9=pd.read_csv("book1.csv")
+var10=var9.dropna()
+print(var10)
+print(var9)
+
+
+#Use of fillna
+var11=pd.read_csv("book1.csv")
+var12=var11.fillna(11)
+print(var12)
+
+
+#Use of fillna with inplace(inplace will do the permanent cange in the originl file)
+var13=pd.read_csv("book1.csv")
+var14=var13.fillna(11,inplace=True)
+print(var14)
+print(var13)
+
+
+
+
 
 
 
