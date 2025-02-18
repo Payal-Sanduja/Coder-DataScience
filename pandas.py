@@ -65,12 +65,10 @@ print(var.describe())
 
 
 print("json file creation")
+
 # Create the json file
-
-
-
 var7=var3.to_json("payal11.json")
-# read the json file
+# Read the json file
 var8=pd.read_json("payal11.json")
 print(var8.head(2))
 
