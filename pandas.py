@@ -44,15 +44,17 @@ data={
     "Data2":[2,4,6,8,10],
     "Data3":[1,2,3,4,5],
     "Data4":[4,5,6,7,8]}
-var3=pd.DataFrame(data)
+var3=pd.DataFrame(data,index=["a","b","c","d","e"])
 print(var3)
-
+#use of loc,iloc method(accessing the specified no of rows)
+print(var3.loc[[0,1,2]])
+print(var3.loc["a","Data2"])
+print(var.iloc[1,0])
 # we can also change the label
 var4=pd.DataFrame(data,index=["Ist","IInd","IIIrd","IV","V"])
 print(var4)
  
-#use of loc method(accessing the specified no of rows)
-print(var3.loc[[0,1,2]])
+
 #create the csv file
 var5=vara.to_csv("payal.csv",index=False)
 
