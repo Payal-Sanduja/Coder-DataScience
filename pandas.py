@@ -100,6 +100,21 @@ print(var13.duplicated())
 var13.drop_duplicates(inplace = True)
 print(var13)
 
+#Merge operation (use to merge 2dataframe based on common column)
+d1={1:["Payal",23,5],2:["Neha",50,43],3:["Preeti",50,65]}
+d2=pd.DataFrame(d1)
+print(d2)
+d3={1:["Payal",23,5],21:["Neha",50,43],31:["Preeti",50,65]}
+d4=pd.DataFrame(d3)
+print(d4)
+print(pd.merge(d2,d4))
+
+#Concat operation
+res=pd.concat([d2,d4])
+print(res)
+res1=pd.concat([d2,d4],axis=1)
+print(res1)
+
 
 
 
