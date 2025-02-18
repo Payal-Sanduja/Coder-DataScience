@@ -116,6 +116,19 @@ print(res)
 res1=pd.concat([d2,d4],axis=1)
 print(res1)
 
+# use of .sort_values(use to arrange in ascending and descending order)
+
+#Arrange in ascending order
+
+sort=d2.sort_values(by="Age",ascending=True)
+print(sort)
+print()
+
+#Arrange in Descending order
+res2=d2.sort_values(by="Age",ascending=False)
+print(res2)
+
+
 
 
 
