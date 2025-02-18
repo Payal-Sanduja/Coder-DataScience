@@ -93,6 +93,14 @@ print(var14)
 print(var13)
 
 
+#Check where there is a duplicacy or not in the csv file
+print(var13.duplicated())
+
+# delete the duplicte value from the csv file
+var13.drop_duplicates(inplace = True)
+print(var13)
+
+
 
 
 
