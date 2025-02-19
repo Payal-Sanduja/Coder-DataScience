@@ -85,5 +85,8 @@ mp.show()
 
 mp.plot(x,linestyle="dotted")
 mp.show()
-
-
+#Create the histogram 
+data=[10,23,35,48,40,42,44,55,58,45,51,16,70,80,92,85,18,9,100,95,67,87,43,20]
+colors=["r","y","r","p","g","r","y","r","p","g","r","y","r","p","g","r","y","r","p","g"]
+mp.hist(data,color="red")
+mp.show()
