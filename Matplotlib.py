@@ -14,3 +14,24 @@ mp.legend()
 
 mp.show()
 
+
+#create the bar graph
+y=[10,20,30,40]
+z=[28,50,76,54]
+mp.bar(y,z)
+mp.show()
+# we can also create the bar graph  horizontally 
+mp.barh(y,z)
+mp.show()
+# change the color of the bar graph
+mp.barh(y,z,color="black")
+mp.show()
+mp.bar(y,z,color="red")
+mp.show()
+# chnage the width of the bar graph
+mp.bar(y,z,color="brown",width=1.6)
+mp.show()
+# change the height of the bar graph in barh
+mp.barh(y,z,color="brown",height=1.6)
+mp.show()
+
