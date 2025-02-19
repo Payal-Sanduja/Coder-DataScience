@@ -76,3 +76,14 @@ mp.colorbar()
 mp.show()
 
 
+# create the line using the given series
+
+mp.plot(x)
+mp.show()
+
+#Change the style of line using linestyle
+
+mp.plot(x,linestyle="dotted")
+mp.show()
+
+
