@@ -37,20 +37,21 @@ mp.show()
 
 
 # Scatter plot
-mp.scatter(y,z)
+mp.scatter(y,z,label="group1")
 mp.legend(title="Scatter Point")
 mp.show()
 # comparing the 2 scatterplot
-mp.scatter(y,z)
+mp.scatter(y,z,marker='*',s=500,label="group1")
 mp.legend(title="Scatter Point")
-mp.scatter(x,y)
+mp.show()
+mp.scatter(x,y,marker='*',s=500,label="group1")
 mp.legend(title="Scatter Point")
 mp.show()
 # change the color of the scatter plot
 
-mp.scatter(y,z,color="green")
+mp.scatter(y,z,color="green",marker='*',s=500,label="group1")
 mp.legend(title="Scatter Point")
-mp.scatter(x,y,color="red")
+mp.scatter(x,y,color="red",marker='*',s=500)
 mp.legend(title="Scatter Point")
 
 
@@ -60,7 +61,15 @@ mp.show()
 
 # use of cmap
 colors=[5, 20, 15, 40, 0, 50, 55]
-mp.scatter(x, y, c=colors, cmap='viridis')
+mp.scatter(x, y, c=colors, cmap='viridis',marker='*',s=500,label="group1")
+mp.legend(title="Scatter Point")
+
+mp.colorbar()
+mp.show()
+
+#use of Transparency
+colors=[5, 20, 15, 40, 0, 50, 55]
+mp.scatter(x, y, c=colors, cmap='viridis',marker='*',s=500,alpha=0.5,label="group1")
 mp.legend(title="Scatter Point")
 
 mp.colorbar()
