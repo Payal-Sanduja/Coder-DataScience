@@ -35,3 +35,28 @@ mp.show()
 mp.barh(y,z,color="brown",height=1.6)
 mp.show()
 
+
+
+# Scatter plot
+mp.scatter(y,z)
+mp.show()
+# comparing the 2 scatterplot
+mp.scatter(y,z)
+mp.scatter(x,y)
+mp.show()
+# change the color of the scatter plot
+
+mp.scatter(y,z,color="green")
+mp.scatter(x,y,color="red")
+
+
+mp.show()
+mp.show()
+
+
+# use of cmap
+colors=[5, 20, 15, 40, 0, 50, 55]
+mp.scatter(x, y, c=colors, cmap='viridis')
+
+mp.colorbar()
+mp.show()
