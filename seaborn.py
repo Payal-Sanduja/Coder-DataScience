@@ -52,6 +52,17 @@ plt.show()
 heat=sns.heatmap(data=data1,vmin=min,vmax=max,cmap="viridis_r",annot=True,linewidths=3, linecolor="red",xticklabels=False,yticklabels=False)
 plt.show()
 
+#creating the pairlot
+data=sns.load_dataset("attention").head(20)
+print(data)
+sns.pairplot(data,hue="attention")
+plt.show()
+
+
+#creating the boxplot
+sns.boxplot(data)
+plt.show()
+
 
 
 
