@@ -1,0 +1,59 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+
+
+df = pd.read_csv("titanicdataset.csv")
+print(df)
+# Check whether there is  any missing value exists or not
+print(df.isnull())
+
+#Count the total number of true values in each column
+
+print(df.isnull().sum())
+
+#Fill missing values in Age column as there are 2 missing values with the median of all the age values
+df['Age'].fillna(df['Age'].median(), inplace=True)
+print(df)
+print(df.isnull().sum())
+
+
+# drop of Cabin column as it contains the large amount of null values
+df.drop(columns=['Cabin'], inplace=True)
+print(df)
+
+
+#Fill missing values in Embarked:
+df['Embarked'].fillna(df['Embarked'].mode()[0], inplace=True)
+print(df)
+
+#Convert categorical values (Sex, Embarked) into numeric:
+
+df['Sex'] = df['Sex'].map({'male': 0, 'female': 1})
+df = pd.get_dummies(df, columns=['Embarked'])
+print(df)
+#Create the bar graph for determining the survival rate according to gender
+sns.barplot(x='Sex', y='Survived', data=df,color="red")
+plt.xticks([0, 1], ['Male', 'Female'])
+plt.title("Survival Rate According to Gender")
+plt.show()
+
+
+#Survival Rate by Passenger Class
+sns.barplot(x='Pclass', y='Survived', data=df,color="g")
+plt.title("Survival Rate by Passenger Class")
+plt.xticks([0,1,2], ['FIRST CLASS', 'SECOND CLASS','THIRD CLASS'])
+plt.show()
+
+
+# histogram for Age Distribution
+sns.histplot(df['Age'], kde=True, bins=20)
+plt.title("Age Distribution of Passengers")
+plt.xlabel("Age")
+plt.ylabel("Count")
+plt.show()
+
+#Create the pair plot to analyse the complete data
+sns.pairplot(df)
+plt.show()
