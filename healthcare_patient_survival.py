@@ -6,7 +6,6 @@ import seaborn as sns
 # Load dataset
 df = pd.read_csv("healthcare_patient_survival.csv").head(30)
 print(df)
-
 # Introduce some null values for demonstration
 df.loc[np.random.choice(df.index, size=20, replace=False), 'Age'] = np.nan
 
