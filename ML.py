@@ -63,3 +63,60 @@ print("Used in robotics, game playing, and self-driving cars.")
 print("            Example: AlphaGo (Google's AI playing Go)")
 
 print("              AI learns by playing millions of games, improving over time by learning from past moves.")
+
+
+
+#project of House Price 
+print("project on house-Price prediction based on area and number of rooms")
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+
+# Sample Dataset
+data = {
+    'Area_sqft': [1500, 2000, 2500, 3000, 3500],
+    'Bedrooms': [3, 4, 4, 5, 5],
+    'Price': [200000, 250000, 300000, 350000, 400000]
+}
+
+# Convert to DataFrame
+df = pd.DataFrame(data)
+
+# Split into features and target variable
+X = df[['Area_sqft', 'Bedrooms']]
+y = df['Price']
+
+# Split into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Train Linear Regression Model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Make Predictions
+y_pred = model.predict(X_test)
+
+# Evaluate Model
+print("Mean Absolute Error:", mean_absolute_error(y_test, y_pred))
+print("Mean Squared Error:", mean_squared_error(y_test, y_pred))
+
+data = {
+    'Feature1': [10, 20, 30, 40, 50],
+    'Feature2': [1, 2, 3, 2.75, 5],
+    'Target': [100, 200, 300, 400, 500]
+}
+df = pd.DataFrame(data)
+
+# Splitting into Features and Target
+X = df[['Feature1', 'Feature2']]
+y = df['Target']
+
+# Train-Test Split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+print("Training Set:")
+print(X_train)
+print("Testing Set:")
+print(X_test)
