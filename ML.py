@@ -74,6 +74,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler
+
+
 # Sample Dataset
 data = {
     'Area_sqft': [1500, 2000, 2500, 3000, 3500],
@@ -120,3 +124,48 @@ print("Training Set:")
 print(X_train)
 print("Testing Set:")
 print(X_test)
+
+
+print(np.random.seed(42))
+data_size = 100
+# Creating random data
+data = {
+    'Feature1': np.random.randint(1, 100, data_size).astype(float),  # Random integers from 1 to 100
+    'Feature2': np.random.uniform(10, 500, data_size),  # Random floating numbers between 10 and 500
+    'Feature3': np.random.normal(50, 15, data_size),  # Normally distributed data with mean=50, std=15
+    'Feature4': np.random.choice([np.nan, 1, 2, 3, 4, 5], data_size, p=[0.2, 0.2, 0.2, 0.2, 0.1, 0.1]),  
+    'Feature5': np.random.choice([np.nan, 10, 20, 30, 40], data_size, p=[0.1, 0.2, 0.3, 0.2, 0.2]),  
+    'Target': np.random.randint(500, 5000, data_size)  # Random target values
+}
+
+# Convert dictionary to DataFrame
+df = pd.DataFrame(data)
+
+# Display first 10 rows
+print(df.head(10))
+
+#Check whether the null value is present
+print(df.isnull().sum())
+
+# Create an imputer with 'mean' strategy
+imputer = SimpleImputer(strategy='mean')
+
+# Apply imputation on Feature4 and Feature5
+df[['Feature4', 'Feature5']] = imputer.fit_transform(df[['Feature4', 'Feature5']])
+
+# Display processed dataset
+print("Dataset after handling missing values:")
+print(df.head(10))
+
+# Create StandardScaler object
+scaler = StandardScaler()
+
+# Apply scaling on numerical features
+scaled_features = scaler.fit_transform(df[['Feature1', 'Feature2', 'Feature3', 'Feature4', 'Feature5']])
+
+# Convert back to DataFrame
+scaled_df = pd.DataFrame(scaled_features, columns=['Feature1', 'Feature2', 'Feature3', 'Feature4', 'Feature5'])
+
+print("Scaled dataset:")
+print(scaled_df.head(10))
+
