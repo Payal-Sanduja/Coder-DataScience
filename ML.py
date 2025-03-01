@@ -175,11 +175,37 @@ from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix
+
 iris = load_iris()
 print("Feature data (X):\n", iris.data)
 print("Target labels (y):\n", iris.target)
 print("Feature names:", iris.feature_names)
 print("Target names:", iris.target_names)
 print("Dataset description:\n", iris.DESCR)
+#Concept of Decision Tree
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import plot_tree
+import matplotlib.pyplot as plt
+# Step 1: Load the Iris dataset
+iris = load_iris()
+X = iris.data
+y = iris.target  
+
+# Step 2: Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Step 3: Create and train the Decision Tree model
+model = DecisionTreeClassifier(criterion='gini', max_depth=3, random_state=42)  # Gini for classification
+model.fit(X_train, y_train)
 
 
+# Step 4: Make predictions on the test set
+y_pred = model.predict(X_test)
+
+# Step 5: Evaluate the model
+print("the accuracy score is givenas")
+accuracy = accuracy_score(y_test, y_pred)
+print(accuracy)
+print("the confusion matrix is ")
+conf_matrix = confusion_matrix(y_test, y_pred)
+print(conf_matrix)
