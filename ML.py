@@ -169,3 +169,17 @@ scaled_df = pd.DataFrame(scaled_features, columns=['Feature1', 'Feature2', 'Feat
 print("Scaled dataset:")
 print(scaled_df.head(10))
 
+# Classification Concept
+# Import necessary libraries
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, confusion_matrix
+iris = load_iris()
+print("Feature data (X):\n", iris.data)
+print("Target labels (y):\n", iris.target)
+print("Feature names:", iris.feature_names)
+print("Target names:", iris.target_names)
+print("Dataset description:\n", iris.DESCR)
+
+
