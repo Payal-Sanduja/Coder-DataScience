@@ -209,3 +209,7 @@ print(accuracy)
 print("the confusion matrix is ")
 conf_matrix = confusion_matrix(y_test, y_pred)
 print(conf_matrix)
+# Step 6: Visualize the Decision Tree
+plt.figure(figsize=(12,8))
+plot_tree(model, filled=True, feature_names=iris.feature_names, class_names=iris.target_names, rounded=True, fontsize=12)
+plt.show()
