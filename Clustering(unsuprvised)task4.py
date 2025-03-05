@@ -46,3 +46,58 @@ plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], c='red
 plt.title(f"K-Means Clustering (K={optimal_k})")
 plt.legend()
 plt.show()
+print("Hierarchical Clustering & DBSCAN")
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.datasets import make_blobs
+from sklearn.cluster import AgglomerativeClustering
+from scipy.cluster.hierarchy import dendrogram, linkage
+
+# Generate synthetic data
+X, _ = make_blobs(n_samples=300, centers=3, cluster_std=1.05, random_state=42)
+
+# Scatter plot of data points
+plt.scatter(X[:, 0], X[:, 1], s=50, alpha=0.7)
+plt.title("Generated Data for Clustering")
+plt.show()
+# Compute the linkage matrix
+linked = linkage(X, method='ward')
+
+# Plot the dendrogram
+plt.figure(figsize=(10, 5))
+dendrogram(linked, orientation='top', distance_sort='descending', show_leaf_counts=True)
+plt.title("Dendrogram for Hierarchical Clustering")
+plt.xlabel("Data Points")
+plt.ylabel("Distance")
+plt.show()
+# Apply Agglomerative Clustering with 3 clusters (from dendrogram)
+agglo = AgglomerativeClustering(n_clusters=3, linkage='ward')
+labels = agglo.fit_predict(X)
+
+# Plot clusters
+plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis', alpha=0.7)
+plt.title("Agglomerative Clustering Results")
+plt.show()
+
+
+from sklearn.datasets import make_moons
+from sklearn.cluster import DBSCAN
+
+# Generate non-linearly separable data
+X, _ = make_moons(n_samples=300, noise=0.1, random_state=42)
+
+# Scatter plot of data points
+plt.scatter(X[:, 0], X[:, 1], s=50, alpha=0.7)
+plt.title("Generated Data for DBSCAN Clustering")
+plt.show()
+# Apply DBSCAN with eps=0.2 and min_samples=5
+dbscan = DBSCAN(eps=0.2, min_samples=5)
+labels = dbscan.fit_predict(X)
+
+# Plot DBSCAN Clustering Results
+plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis', alpha=0.7)
+plt.title("DBSCAN Clustering Results")
+plt.show()
+
+
